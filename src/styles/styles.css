@@ -1,0 +1,229 @@
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  /* Sidebar */
+  .sidebar {
+    width: 250px;
+    background-color: orange;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    border-right: 2px solid #ddd;
+  }
+  
+  .logo {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .sidebar-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .sidebar-btn:hover {
+    background-color: greenyellow;
+    color:black;
+  }
+  
+  /* Logo Styling */
+  .branding img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Content Layout (adjusting for sidebar width) */
+  .dashboard-content {
+    flex-grow: 1;
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+  }
+  
+  /* Fixed Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: orange;
+    padding: 20px 20px;
+    border-bottom: 2px solid #ddd;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    right:200px;
+    width:1000px;
+    left: 400px;
+    z-index: 1000;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    width: 400px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  /* Navbar Icons */
+  .nav-icon {
+    font-size: 22px;
+    color: #333;
+    cursor: pointer;
+    margin-left: 15px;
+  }
+  
+  .nav-icon:hover {
+    color: #007bff;
+  }
+  /* Scrollable Content (fixing navbar position) */
+  .application-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-top: 80px; /* Adjusting for fixed navbar */
+    padding: 20px;
+    width: 100%;
+    min-width:1000px;
+    margin-left: 10px;
+  }
+  /* Table Styling */
+  .applications-table {
+    
+    margin-left: 40px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .applications-table th, .applications-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .applications-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Buttons */
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .accept-btn, .reject-btn, .delete-btn {
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 3px;
+    font-size: 14px;
+    white-space: nowrap; /* Prevents buttons from breaking into multiple lines */
+  }
+  
+  .accept-btn { background-color: #28a745; color: white; }
+  .reject-btn { background-color: #dc3545; color: white; }
+  .delete-btn { background-color: #6c757d; color: white; }
+  
+  .accept-btn:hover { background-color: #218838; }
+  .reject-btn:hover { background-color: #c82333; }
+  .delete-btn:hover { background-color: #5a6268; }
+  .download-btn {
+    background-color: #3498db; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Vertical and horizontal padding */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+.download-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.download-btn:active {
+    transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+  /* 🌍 Responsive Design */
+  @media (max-width: 768px) { /* Tablets */
+    .applications-table {
+      font-size: 14px;
+    }
+    .action-buttons {
+      flex-direction: column; /* Stack buttons on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) { /* Phones */
+    .applications-table {
+      font-size: 12px;
+    }
+    .applications-table th, .applications-table td {
+      padding: 8px;
+    }
+    .accept-btn, .reject-btn, .delete-btn {
+      font-size: 12px;
+      padding: 4px 8px;
+      width: 100%; /* Full-width buttons for better touch usability */
+    }
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+  
+.dashboard-content h2 {
+    margin-top: 80px;
+   margin-left: 45%;
+
+    background-color: #2c3e50; /* Dark background for contrast */
+    color: white; /* White text for readability */
+    text-align: center; /* Center text */
+    font-size: 16px; /* Adjust text size */
+    font-weight: bold; /* Make headers stand out */
+    width:fit-content; /* Full width to ensure centering works */
+    padding: 10px; /* Optional: add padding for better spacing */
+    box-sizing: border-box; /* Include padding in the element's total width */
+}
+.action-btn {
+    background-color: #95a5a6; /* Gray background for disabled state */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding */
+    cursor: not-allowed; /* Show a not-allowed cursor for disabled button */
+}
