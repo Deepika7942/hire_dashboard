@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import "../styles/styles.css";
 
-const API_BASE_URL = "https://hire-backend-swart.vercel.app/api";
+const API_BASE_URL = "https://hire-backend-swart-ashy.vercel.app/api";
 
 
 const RejectedApplications = () => {
